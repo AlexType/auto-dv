@@ -1,0 +1,99 @@
+
+<div class="content">
+  <form [formGroup]="fg">
+    <div class="row">
+      <div class="col">
+        <h4>Характеристики автомобиля</h4>
+        <mat-form-field class="w-100">
+          <mat-label>Аукционная стоимость автомобиля</mat-label>
+          <input formControlName="aucPrice" type="number" matInput>
+          <mat-icon matSuffix>
+            <i class="bi bi-currency-yen"></i>
+          </mat-icon>
+        </mat-form-field>
+        <mat-form-field class="w-100">
+          <mat-label>Объём</mat-label>
+          <input formControlName="cc" type="number" matInput>
+          <mat-icon matSuffix>
+            сс
+          </mat-icon>
+        </mat-form-field>
+        <mat-form-field class="w-100">
+          <mat-label>Мощность</mat-label>
+          <input formControlName="ls" type="number" matInput>
+          <mat-icon matSuffix>
+            л.с.
+          </mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <h4>Тип двигателя</h4>
+        <mat-radio-group class="d-flex flex-column" formControlName="engine">
+          <mat-radio-button class="example-radio-button" [value]="engine.Gas">
+            Бензин
+          </mat-radio-button>
+          <mat-radio-button class="example-radio-button" [value]="engine.Diesel">
+            Дизель
+          </mat-radio-button>
+          <mat-radio-button class="example-radio-button" [value]="engine.Hybrid">
+            Гибрид
+          </mat-radio-button>
+          <mat-radio-button class="example-radio-button" [value]="engine.Electro">
+            Электрический
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="col">
+        <h4>Возраст</h4>
+        <mat-radio-group class="d-flex flex-column" formControlName="age">
+          <mat-radio-button class="example-radio-button" [value]="carAge.Low">
+            Младше 3-х лет
+          </mat-radio-button>
+          <mat-radio-button class="example-radio-button" [value]="carAge.Mid">
+            3-5 лет
+          </mat-radio-button>
+          <mat-radio-button class="example-radio-button" [value]="carAge.High">
+            5-7 лет
+          </mat-radio-button>
+          <mat-radio-button class="example-radio-button" [value]="carAge.Oldest">
+            Старше 7 лет
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="col-auto">
+        <ng-container *ngIf="currRate">
+          <div class="currency">
+            <span>{{currRate.JPYRUB | currency:'₽'}}</span>
+            <span>₽/¥</span>
+            <span>{{dateTime | date:'dd.MM.yyyy. HH:mm:ss'}}</span>
+          </div>
+          <div class="divider my-3"></div>
+          <div class="currency">
+            <span>{{currRate.USDRUB | currency:'₽'}}</span>
+            <span>₽/$</span>
+            <span>{{dateTime | date:'dd.MM.yyyy. HH:mm:ss'}}</span>
+          </div>
+          <div class="divider my-3"></div>
+          <div class="currency">
+            <span>{{currRate.EURRUB | currency:'₽'}}</span>
+            <span>₽/€</span>
+            <span>{{dateTime | date:'dd.MM.yyyy. HH:mm:ss'}}</span>
+          </div>
+        </ng-container>
+        <div *ngIf="loading" class="loading">
+          <mat-spinner color="accent" diameter="50"></mat-spinner>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="row align-items-center">
+    <div class="col-auto">
+      <button mat-raised-button color="accent" (click)="calculate()">
+        Рассчитать
+      </button>
+    </div>
+    <div class="col-auto" *ngIf="calcRes">
+      {{calcRes| currency:'₽'}}
+    </div>
+  </div>
+</div>

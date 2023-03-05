@@ -1,3 +1,4 @@
+import { UserCalculationViewComponent } from './components/user-calculation-view/user-calculation-view.component';
 import { MatInputModule } from '@angular/material/input';
 import { RouterModule } from '@angular/router';
 import { UiKitModule } from '@root/ui-kit/ui-kit.module';
@@ -31,7 +32,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     InviteBlockViewComponent,
     UserContactsContainerComponent,
     UserContactViewComponent,
-    UserCalculationContainerComponent
+    UserCalculationContainerComponent,
+    UserCalculationViewComponent
   ],
   imports: [
     CommonModule,
