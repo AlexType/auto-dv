@@ -30,7 +30,7 @@ export class SendRequestDialogComponent implements OnInit {
     this.fg = this._fb.group({
       name: ['', [Validators.required]],
       number: ['', [Validators.required]],
-      comment: [this.data.previewText || '']
+      comment: [this.data?.previewText || '']
     });
   }
 
