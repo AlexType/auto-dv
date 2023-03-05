@@ -13,18 +13,18 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   public reviews(): Observable<ReviewDto[]> {
-    return this.http.get<ReviewDto[]>(`${environment.apiKey}/auth/reviews`);
+    return this.http.get<ReviewDto[]>(`${environment.apiKey}/api/reviews`);
   }
 
   public popularCars(): Observable<Car[]> {
-    return this.http.get<Car[]>(`${environment.apiKey}/auth/popular-cars`);
+    return this.http.get<Car[]>(`${environment.apiKey}/api/popular-cars`);
   }
 
   public cars(mark: string): Observable<Car[]> {
-    return this.http.get<Car[]>(`${environment.apiKey}/auth/cars${mark ? `?mark=${mark}` :''}`);
+    return this.http.get<Car[]>(`${environment.apiKey}/api/cars${mark ? `?mark=${mark}` :''}`);
   }
 
   public sendMail(form: SendMailDto): Observable<void> {
-    return this.http.post<void>(`${environment.apiKey}/auth/send-mail`, form)
+    return this.http.post<void>(`${environment.apiKey}/api/send-mail`, form)
   }
 }

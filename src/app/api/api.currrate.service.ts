@@ -11,6 +11,6 @@ export class ApiCurrRateService {
   constructor(private http: HttpClient) { }
 
   public get(): Observable<CurrRate> {
-    return this.http.get<CurrRate>(`${environment.apiKey}/auth/curr-rate`).pipe(map((r: any) => r.data));
+    return this.http.get<CurrRate>(`${environment.apiKey}/api/curr-rate`).pipe(map((r: any) => r.data));
   }
 }
