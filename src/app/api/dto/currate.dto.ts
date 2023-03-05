@@ -1,5 +1,5 @@
 export interface CurrRate {
-  USDRUB: string;
+  JPYRUB: string;
   EURRUB: string;
-  RUBUSD: string;
+  USDRUB: string;
 }

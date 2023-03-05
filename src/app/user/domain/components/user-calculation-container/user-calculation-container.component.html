@@ -65,27 +65,21 @@
         </div>
         <div class="col-auto" *ngIf="currRate$ | async as currRate">
           <div class="currency">
-            <span>{{currRate.RUBUSD | currency:'P'}}</span>
+            <span>{{currRate.JPYRUB | currency:'₽'}}</span>
             <span>₽/¥</span>
-            <span>
-              Примбанк (14.02.2023)
-            </span>
+            <span>{{dateTime | date:'dd.MM.yyyy. HH:mm:ss'}}</span>
           </div>
           <div class="divider my-3"></div>
           <div class="currency">
-            <span>73,86 ₽</span>
+            <span>{{currRate.USDRUB | currency:'₽'}}</span>
             <span>₽/$</span>
-            <span>
-              ЦБ РФ (14.02.2023)
-            </span>
+            <span>{{dateTime | date:'dd.MM.yyyy. HH:mm:ss'}}</span>
           </div>
           <div class="divider my-3"></div>
           <div class="currency">
-            <span>79,34 ₽</span>
+            <span>{{currRate.EURRUB | currency:'₽'}}</span>
             <span>₽/€</span>
-            <span>
-              ЦБ РФ (14.02.2023)
-            </span>
+            <span>{{dateTime | date:'dd.MM.yyyy. HH:mm:ss'}}</span>
           </div>
         </div>
       </div>

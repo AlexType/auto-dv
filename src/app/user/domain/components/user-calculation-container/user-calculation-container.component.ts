@@ -9,15 +9,13 @@ import { CurrRate } from 'src/app/api/dto/currate.dto';
   styleUrls: ['./user-calculation-container.component.scss']
 })
 export class UserCalculationContainerComponent implements OnInit {
+  protected dateTime!: Date;
   protected currRate$: Observable<CurrRate | null> = of(null);
 
   constructor(private readonly _apiCurrRateService: ApiCurrRateService) { }
 
   ngOnInit(): void {
-    this._apiCurrRateService.get().subscribe(e=>{
-      console.log(e);
-
-    })
-    // this.currRate$ = this._apiCurrRateService.get()
+    this.dateTime = new Date();
+    this.currRate$ = this._apiCurrRateService.get();
   }
 }
