@@ -1,0 +1,31 @@
+.wrap {
+  position: relative;
+  min-height: 492px;
+}
+
+.loading{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 22;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+
+  *{
+    position: relative;
+    z-index: 333;
+  }
+
+  &::after{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: #424242ab;
+  }
+}

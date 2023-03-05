@@ -1,0 +1,10 @@
+<div class="wrap">
+  <div class="row">
+    <div class="col-12 col-sm-6 col-lg-4 col-xl-3" *ngFor="let car of cars">
+      <app-auto-card-view [car]="car"></app-auto-card-view>
+    </div>
+  </div>
+  <div class="loading" *ngIf="loading">
+    <mat-spinner color="accent" diameter="55"></mat-spinner>
+  </div>
+</div>

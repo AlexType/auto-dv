@@ -8,6 +8,7 @@ import { UserMainPageComponent } from './components/user-main-page/user-main-pag
 import { UserModule } from '../domain/user.module';
 import { UserContactsPageComponent } from './components/user-contacts-page/user-contacts-page.component';
 import { UserCalculationPageComponent } from './components/user-calculation-page/user-calculation-page.component';
+import { UserAutoPageComponent } from './components/user-auto-page/user-auto-page.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { UserCalculationPageComponent } from './components/user-calculation-page
     UserFaqPageComponent,
     UserMainPageComponent,
     UserContactsPageComponent,
-    UserCalculationPageComponent
+    UserCalculationPageComponent,
+    UserAutoPageComponent
   ],
   imports: [
     CommonModule,

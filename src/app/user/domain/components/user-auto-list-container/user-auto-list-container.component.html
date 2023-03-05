@@ -1,0 +1,40 @@
+<div class="container">
+  <app-breadcrumbs active="Автомобили"></app-breadcrumbs>
+  <h1 class="my-5">Автомобили</h1>
+
+  <mat-card class="mb-5">
+    <mat-card-content>
+      <div class="mb-4">
+        <form [formGroup]="fg">
+          <div class="row">
+            <div class="col-auto">
+              <mat-form-field appearance="fill">
+                <mat-label>Марка</mat-label>
+                <mat-select formControlName="mark">
+                  <mat-option *ngFor="let mark of marks" [value]="mark">
+                    {{mark}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </form>
+        <div class="row">
+          <div class="col-auto">
+            <button mat-raised-button color="accent" (click)="fetch()" [disabled]="loading">
+              Искать
+            </button>
+          </div>
+          <div class="col-auto">
+            <button mat-raised-button color="warn" (click)="reset()" [disabled]="loading">
+              Сброс
+            </button>
+          </div>
+        </div>
+      </div>
+      <app-user-auto-list-view [cars]="cars$ | async" [loading]="loading"></app-user-auto-list-view>
+    </mat-card-content>
+  </mat-card>
+
+  <app-invite-block-view></app-invite-block-view>
+</div>

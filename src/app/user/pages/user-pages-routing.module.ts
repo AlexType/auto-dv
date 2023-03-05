@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UserAutoPageComponent } from './components/user-auto-page/user-auto-page.component';
 import { UserCalculationPageComponent } from './components/user-calculation-page/user-calculation-page.component';
 import { UserContactsPageComponent } from './components/user-contacts-page/user-contacts-page.component';
 import { UserFaqPageComponent } from './components/user-faq-page/user-faq-page.component';
@@ -9,6 +10,7 @@ import { UserServicesPageComponent } from './components/user-services-page/user-
 const routes: Routes = [
   { path: '', component: UserMainPageComponent },
   { path: 'faq', component: UserFaqPageComponent },
+  { path: 'auto', component: UserAutoPageComponent },
   { path: 'services', component: UserServicesPageComponent },
   { path: 'contacts', component: UserContactsPageComponent },
   { path: 'calculation', component: UserCalculationPageComponent }

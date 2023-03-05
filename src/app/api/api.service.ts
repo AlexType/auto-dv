@@ -20,6 +20,10 @@ export class ApiService {
     return this.http.get<Car[]>(`${environment.apiKey}/auth/popular-cars`);
   }
 
+  public cars(mark: string): Observable<Car[]> {
+    return this.http.get<Car[]>(`${environment.apiKey}/auth/cars${mark ? `?mark=${mark}` :''}`);
+  }
+
   public sendMail(form: SendMailDto): Observable<void> {
     return this.http.post<void>(`${environment.apiKey}/auth/send-mail`, form)
   }

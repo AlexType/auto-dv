@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 export class MainNavComponent {
   protected navItems: NavItem[] = [
     {
-      routerLink: ['/catalog'],
+      routerLink: ['/auto'],
       name: 'Автомобили'
     },
     {

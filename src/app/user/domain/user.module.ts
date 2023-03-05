@@ -20,6 +20,8 @@ import { UserContactViewComponent } from './components/user-contact-view/user-co
 import { UserCalculationContainerComponent } from './components/user-calculation-container/user-calculation-container.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserAutoListContainerComponent } from './components/user-auto-list-container/user-auto-list-container.component';
+import { UserAutoListViewComponent } from './components/user-auto-list-view/user-auto-list-view.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     UserContactsContainerComponent,
     UserContactViewComponent,
     UserCalculationContainerComponent,
-    UserCalculationViewComponent
+    UserCalculationViewComponent,
+    UserAutoListContainerComponent,
+    UserAutoListViewComponent
   ],
   imports: [
     CommonModule,
@@ -52,7 +56,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     UserServicesContainerComponent,
     UserMainContainerComponent,
     UserContactsContainerComponent,
-    UserCalculationContainerComponent
+    UserCalculationContainerComponent,
+    UserAutoListContainerComponent
   ]
 })
 export class UserModule { }
