@@ -1,3 +1,5 @@
+@import "tools";
+
 .main-page {
   &__info {
     position: relative;
@@ -28,6 +30,10 @@
           text-align: center;
           font-size: 50px;
           font-weight: bold;
+
+          @include media-breakpoint-down(sm) {
+            font-size: 30px;
+          }
         }
 
         &:last-child {
@@ -48,4 +54,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 700px;
 }

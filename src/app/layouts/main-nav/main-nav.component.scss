@@ -1,6 +1,9 @@
 @import "tools";
 
 .app-main-nav {
+  white-space: nowrap;
+  overflow: auto;
+
   ul {
     display: flex;
     align-items: center;

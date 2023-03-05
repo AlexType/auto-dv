@@ -22,7 +22,7 @@
         <div class="loading" *ngIf="loading">
           <mat-spinner color="accent" diameter="50"></mat-spinner>
         </div>
-        <swiper class="p-2 pb-3" [config]="swiperConfig" *ngIf="!loading && cars">
+        <swiper #swiper class="p-2 pb-3" [config]="swiperConfig" *ngIf="!loading && cars">
           <ng-template *ngFor="let car of cars" swiperSlide>
             <app-auto-card-view [car]="car"></app-auto-card-view>
           </ng-template>
@@ -33,8 +33,8 @@
 
   <div class="main-page__info mt-5">
     <div class="container py-4">
-      <div class="row">
-        <div class="col">
+      <div class="row gy-4">
+        <div class="col-12 col-lg-6">
           <h2>Преимущества работы с нами</h2>
           <p>Оформите любой автомобиль в кредит с помощью наших банков партнеров</p>
           <div class="main-page__info-plus">
@@ -64,7 +64,7 @@
             </div>
           </div>
         </div>
-        <div class="col">
+        <div class="col-12 col-lg-6">
           <h2>О нас</h2>
           <p>
             Мы команда "СЕВЕР ДВ" и мы готовы <br>

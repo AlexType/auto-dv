@@ -1,11 +1,11 @@
 
 <div class="content">
   <form [formGroup]="fg">
-    <div class="row">
+    <div class="row gy-4">
       <div class="col">
         <h4>Характеристики автомобиля</h4>
         <mat-form-field class="w-100">
-          <mat-label>Аукционная стоимость автомобиля</mat-label>
+          <mat-label>Аукционная стоимость</mat-label>
           <input formControlName="aucPrice" type="number" matInput>
           <mat-icon matSuffix>
             <i class="bi bi-currency-yen"></i>
@@ -60,7 +60,7 @@
           </mat-radio-button>
         </mat-radio-group>
       </div>
-      <div class="col-auto">
+      <div class="col-12 col-lg-auto">
         <ng-container *ngIf="currRate">
           <div class="currency">
             <span>{{currRate.JPYRUB | currency:'₽'}}</span>
@@ -86,7 +86,7 @@
       </div>
     </div>
   </form>
-  <div class="row align-items-center">
+  <div class="row align-items-center mt-4">
     <div class="col-auto">
       <button mat-raised-button color="accent" (click)="calculate()">
         Рассчитать
