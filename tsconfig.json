@@ -4,7 +4,8 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@root/ui-kit/*": [ "src/app/ui-kit/*" ]
+      "@root/ui-kit/*": [ "src/app/ui-kit/*" ],
+      "@root/env/*": [ "src/env/*" ]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
