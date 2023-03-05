@@ -1,6 +1,6 @@
 import { ApiService } from './../../../../api/api.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Inject } from '@angular/core';
+import { Inject, OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -13,14 +13,10 @@ import { finalize, tap } from 'rxjs';
   templateUrl: './send-request-dialog.component.html',
   styleUrls: ['./send-request-dialog.component.scss']
 })
-export class SendRequestDialogComponent {
+export class SendRequestDialogComponent implements OnInit {
   protected loading: boolean = false;
 
-  protected fg: FormGroup = this._fb.group({
-    name: ['', [Validators.required]],
-    number: ['', [Validators.required]],
-    comment: ['']
-  });
+  protected fg!: FormGroup;
 
   constructor(
     private readonly _fb: FormBuilder,
@@ -29,6 +25,14 @@ export class SendRequestDialogComponent {
     protected readonly _dialogRef: MatDialogRef<SendRequestDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: SendRequestDialogData
   ) { }
+
+  ngOnInit(): void {
+    this.fg = this._fb.group({
+      name: ['', [Validators.required]],
+      number: ['', [Validators.required]],
+      comment: [this.data.previewText || '']
+    });
+  }
 
   protected close(): void {
     this._dialogRef.close();
@@ -49,5 +53,7 @@ export class SendRequestDialogComponent {
   }
 }
 
-export interface SendRequestDialogData { }
+export interface SendRequestDialogData {
+  previewText?: string;
+}
 

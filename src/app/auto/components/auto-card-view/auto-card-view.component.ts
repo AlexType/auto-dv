@@ -14,6 +14,6 @@ export class AutoCardViewComponent {
   constructor(private readonly _sendMailService: SendMailService) { }
 
   protected sendRequest(): void {
-    this._sendMailService.openDialog();
+    this._sendMailService.openDialog({ previewText: `Интересует ${this.car.mark} ${this.car.model}` });
   }
 }

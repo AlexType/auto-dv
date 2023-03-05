@@ -20,7 +20,6 @@ export class UserMainViewComponent {
 
   protected swiperConfig: SwiperOptions = {
     navigation: false,
-    autoplay: true,
     scrollbar: { draggable: true },
     breakpoints: {
       0: {
