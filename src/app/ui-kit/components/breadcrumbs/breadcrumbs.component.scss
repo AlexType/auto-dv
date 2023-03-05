@@ -1,0 +1,21 @@
+@import "tools";
+
+$breadcrumb-divider-color: $root-gray;
+$breadcrumb-active-color: $root-gray;
+$breadcrumb-margin-bottom: 0;
+$breadcrumb-divider: quote("-");
+
+@import "bootstrap/scss/breadcrumb";
+
+.app-breadcrumbs {
+  li {
+    a {
+      color: #fff;
+      text-decoration: none;
+
+      &:hover {
+        color: $root-red;
+      }
+    }
+  }
+}

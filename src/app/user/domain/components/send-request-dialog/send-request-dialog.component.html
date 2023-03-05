@@ -1,0 +1,43 @@
+<div class="app-send-request-dialog">
+  <div mat-dialog-title>
+    <h3>
+      Есть вопрос?<br>
+      Оставьте заявку!
+    </h3>
+  </div>
+  <div mat-dialog-content>
+    <p>
+      Наш менеджер подберет для вас автомобиль! <br>
+      Оставьте ваши контакты, мы свяжемся с вами для уточнения характеристик.
+    </p>
+    <form [formGroup]="fg">
+      <mat-form-field appearance="fill" class="w-100">
+        <mat-label>Как вас зовут ?</mat-label>
+        <input formControlName="name" matInput required>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="w-100">
+        <mat-label>Введите ваш номер телефона</mat-label>
+        <input formControlName="number" matInput required>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="w-100">
+        <mat-label>Введите ваш комментарий</mat-label>
+        <textarea formControlName="comment" matInput></textarea>
+      </mat-form-field>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <div class="row justify-content-between">
+      <div class="col-auto">
+        <button mat-raised-button color="warn" (click)="close()">Закрыть</button>
+      </div>
+      <div class="col-auto">
+        <button mat-raised-button color="accent" (click)="send()" [disabled]="loading">
+          Оставить заявку
+          <mat-icon *ngIf="loading">
+            <mat-spinner color="accent" diameter="15"></mat-spinner>
+          </mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

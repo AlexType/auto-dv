@@ -1,0 +1,62 @@
+<mat-card class="app-auto-card-view">
+  <mat-card-content class="app-auto-card-view__container">
+    <div>
+      <div class="app-auto-card-view__preview">
+        <img src="{{car.img}}" alt="">
+      </div>
+      <ul class="mt-3">
+        <li>
+          <div class="row">
+            <div class="col-auto">
+              <span class="app-auto-card-view__title">Марка, модель</span>
+            </div>
+            <div class="col">
+              <span class="app-auto-card-view__info">{{car.mark}} {{car.model}}</span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col-auto">
+              <span class="app-auto-card-view__title">Объём двигателя</span>
+            </div>
+            <div class="col">
+              <span class="app-auto-card-view__info">{{car.cc}}</span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col-auto">
+              <span class="app-auto-card-view__title">Тип топлива</span>
+            </div>
+            <div class="col">
+              <span class="app-auto-card-view__info">{{car.engine}}</span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col-auto">
+              <span class="app-auto-card-view__title">Год</span>
+            </div>
+            <div class="col">
+              <span class="app-auto-card-view__info">{{car.year}}</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <div class="app-auto-card-view__divider my-3"></div>
+      <div class="app-auto-card-view__footer">
+        <div class="app-auto-card-view__price mb-3">
+          <span>от</span> <span>{{car.price | currency: 'Р'}}</span>
+        </div>
+        <button mat-flat-button color="warn" (click)="sendRequest()">
+          Оставить заявку
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

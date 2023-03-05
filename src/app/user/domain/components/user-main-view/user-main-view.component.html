@@ -1,0 +1,92 @@
+<div class="main-page">
+  <div class="container">
+    <h1 class="mb-4">Автомобили с аукционов Японии</h1>
+
+    <p class="main-page__text">
+      Поставка автомобилей из Японии по всей России. <br>
+      Привезем под полную пошлину и конструктором
+    </p>
+
+    <p class="main-page__text-sm">
+      Оставьте заявку, мы обсудим с вами интересующий автомобиль и <br>
+      сориентируем вас в цене под ключ с доставкой в ваш город.
+    </p>
+
+    <button mat-flat-button color="warn" (click)="sendRequest.emit()">
+      Оставить заявку
+    </button>
+
+    <mat-card class="mt-5">
+      <mat-card-content>
+        <h2 class="mb-4">Популярные модели</h2>
+        <swiper class="p-2 pb-3" [config]="swiperConfig" *ngIf="cars">
+          <ng-template *ngFor="let car of cars" swiperSlide>
+            <app-auto-card-view [car]="car"></app-auto-card-view>
+          </ng-template>
+        </swiper>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="main-page__info mt-5">
+    <div class="container py-4">
+      <div class="row">
+        <div class="col">
+          <h2>Преимущества работы с нами</h2>
+          <p>Оформите любой автомобиль в кредит с помощью наших банков партнеров</p>
+          <div class="main-page__info-plus">
+            <div class="row">
+              <div class="col">
+                13 лет
+              </div>
+              <div class="col">
+                Опыта работа <br> на рынке <br> продаж
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                14 000+
+              </div>
+              <div class="col">
+                Проданных <br> автомобилей
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                100%
+              </div>
+              <div class="col">
+                Страховка от <br> внештатных ситуаций
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <h2>О нас</h2>
+          <p>
+            Мы команда "СЕВЕР ДВ" и мы готовы <br>
+            предоставить комплекс услуг для вашего <br>
+            будущего автомобиля, начиная с покупки и <br>
+            заканчивая полным обслуживанием.
+          </p>
+          <p><strong>Комплекс автоуслуг от "А" до "Я"</strong></p>
+          <p><strong>Покупаем автомобили на строгих японских аукционах</strong></p>
+          <p><strong>Доставка автомобилей под ключ за 4 недели во Владивосток</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <mat-card class="my-5">
+      <mat-card-content>
+        <swiper class="p-2 pb-3" [config]="swiperConfig2" *ngIf="reviews">
+          <ng-template *ngFor="let review of reviews" swiperSlide>
+            <app-review [review]="review"></app-review>
+          </ng-template>
+        </swiper>
+      </mat-card-content>
+    </mat-card>
+    <app-invite-block-view></app-invite-block-view>
+  </div>
+</div>

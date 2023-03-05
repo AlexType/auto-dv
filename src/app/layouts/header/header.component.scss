@@ -1,0 +1,40 @@
+@import "tools";
+
+.app-header {
+  &__logo {
+    display: flex;
+    flex-direction: column;
+
+    img {
+      width: 150px;
+    }
+
+    span {
+      font-size: $root-fs-small;
+    }
+  }
+
+  &__number {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: $root-fs-large;
+    }
+
+    span {
+      font-size: $root-fs-small;
+      opacity: .7;
+    }
+  }
+
+  &__divider {
+    width: 1px;
+    height: 35px;
+    background: $root-gray;
+    opacity: .3;
+  }
+}

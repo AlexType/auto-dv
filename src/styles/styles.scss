@@ -1,0 +1,29 @@
+@import "./tools.scss";
+@import "./custom/bootstrap";
+
+@import "swiper/css";
+@import "swiper/css/grid";
+@import "swiper/css/scrollbar";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  --mdc-typography-button-font-size: 16px;
+}
+
+.mat-mdc-form-field:not(.mat-form-field-no-animations) .mdc-text-field__input,
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+  caret-color: #fff;
+  color: #fff !important;
+}
+
+.mat-mdc-form-field:not(.mat-form-field-no-animations) .mdc-line-ripple::after,
+.mdc-text-field--filled:not(.mdc-text-field--disabled)
+  .mdc-line-ripple::before {
+  border-bottom-color: #fff !important;
+}
