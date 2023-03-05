@@ -19,7 +19,10 @@
     <mat-card class="mt-5">
       <mat-card-content>
         <h2 class="mb-4">Популярные модели</h2>
-        <swiper class="p-2 pb-3" [config]="swiperConfig" *ngIf="cars">
+        <div class="loading" *ngIf="loading">
+          <mat-spinner color="accent" diameter="50"></mat-spinner>
+        </div>
+        <swiper class="p-2 pb-3" [config]="swiperConfig" *ngIf="!loading && cars">
           <ng-template *ngFor="let car of cars" swiperSlide>
             <app-auto-card-view [car]="car"></app-auto-card-view>
           </ng-template>

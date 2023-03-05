@@ -13,6 +13,7 @@ SwiperCore.use([Grid]);
 })
 export class UserMainViewComponent {
   @Input() cars: Car[] | null = []
+  @Input() loading: boolean | undefined;
   @Input() reviews: ReviewDto[] | null = []
 
   @Output() sendRequest: EventEmitter<void> = new EventEmitter();

@@ -1,4 +1,5 @@
 <app-user-main-view [reviews]="reviews$ | async"
                     [cars]="cars$ | async"
+                    [loading]="loading"
                     (sendRequest)="sendRequest()">
 </app-user-main-view>

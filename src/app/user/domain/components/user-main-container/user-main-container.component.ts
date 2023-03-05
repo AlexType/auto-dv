@@ -1,4 +1,4 @@
-import { Observable, of } from 'rxjs';
+import { finalize, Observable, of } from 'rxjs';
 import { ReviewDto } from './../../../../api/dto/review.dto';
 import { ApiService } from './../../../../api/api.service';
 import { SendMailService } from './../../services/send-mail.service';
@@ -13,6 +13,7 @@ import { Car } from 'src/app/api/dto/car.dto';
 export class UserMainContainerComponent implements OnInit {
   protected reviews$: Observable<ReviewDto[]> = of([]);
   protected cars$: Observable<Car[]> = of([]);
+  protected loading: boolean = true;
 
   constructor(
     private readonly _api: ApiService,
@@ -21,7 +22,7 @@ export class UserMainContainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.reviews$ = this._api.reviews()
-    this.cars$ = this._api.popularCars();
+    this.cars$ = this._api.popularCars().pipe(finalize(() => this.loading = false));
   }
 
   protected sendRequest(): void {
