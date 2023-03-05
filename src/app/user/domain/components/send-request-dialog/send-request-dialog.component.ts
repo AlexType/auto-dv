@@ -45,7 +45,7 @@ export class SendRequestDialogComponent implements OnInit {
     this._api.sendMail(this.fg.value).pipe(
       untilDestroyed(this),
       tap(() => {
-        this._snackBar.open('Заявка успешно отправлена!');
+        this._snackBar.open('Заявка успешно отправлена!', '', { duration: 3000 });
         this.close();
       }),
       finalize(() => this.loading = false)
