@@ -5,7 +5,7 @@ export enum Engine {
   Electro
 }
 
-export const EngineData: { [e in Engine]: string } = {
+export const engineData: { [e in Engine]: string } = {
   [Engine.Gas]: 'Бензин',
   [Engine.Diesel]: 'Дизель',
   [Engine.Hybrid]: 'Гибрид',

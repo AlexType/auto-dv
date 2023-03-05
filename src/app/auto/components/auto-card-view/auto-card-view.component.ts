@@ -1,6 +1,7 @@
 import { SendMailService } from './../../../user/domain/services/send-mail.service';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Car } from 'src/app/api/dto/car.dto';
+import { engineData } from 'src/app/user/domain/models/engine';
 
 @Component({
   selector: 'app-auto-card-view',
@@ -10,6 +11,8 @@ import { Car } from 'src/app/api/dto/car.dto';
 })
 export class AutoCardViewComponent {
   @Input() car!: Car;
+
+  protected engineData = engineData;
 
   constructor(private readonly _sendMailService: SendMailService) { }
 
