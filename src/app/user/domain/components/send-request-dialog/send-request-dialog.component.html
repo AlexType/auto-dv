@@ -17,7 +17,7 @@
       </mat-form-field>
       <mat-form-field appearance="fill" class="w-100">
         <mat-label>Введите ваш номер телефона</mat-label>
-        <input formControlName="number" matInput required>
+        <input formControlName="number" matInput required prefix="+7" mask="(000) 000 00 00" [showMaskTyped]="true">
       </mat-form-field>
       <mat-form-field appearance="fill" class="w-100">
         <mat-label>Введите ваш комментарий</mat-label>

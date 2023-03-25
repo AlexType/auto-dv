@@ -1,1 +1,58 @@
-<p>admin-dashboard-container works!</p>
+<tui-loader [showLoader]="loading" [overlay]="true">
+  <table *ngIf="userRequests$ | async as userRequests" class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Имя</th>
+        <th scope="col">Номер</th>
+        <th scope="col">Комментарий</th>
+        <th scope="col">Дата создания</th>
+        <th scope="col">Звонок</th>
+        <th scope="col">Пометка админа</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let userRequest of userRequests; let i = index" style="vertical-align: middle;">
+        <td>{{i + 1}}</td>
+        <td>{{userRequest.name}}</td>
+        <td>
+          <a href="tel:7{{userRequest.number}}" style="color: white;">
+            +7 {{userRequest.number | mask: '(000) 000-0000'}}
+          </a>
+        </td>
+        <td style="max-width: 300px;">
+          <div class="field">
+            {{userRequest.comment}}
+          </div>
+        </td>
+        <td>
+          {{userRequest.dateCreated | date:'dd.MM.yyyy HH:mm'}}
+        </td>
+        <td>
+          <div class="row gx-2" style="min-width: 280px;">
+            <div class="col-auto">
+              <tui-toggle [(ngModel)]="userRequest.called" (ngModelChange)="updateRequest$.next(userRequest)"
+                          [showIcons]="true" size="l"></tui-toggle>
+            </div>
+            <div class="col-auto">
+              <tui-badge *ngIf="userRequest.called" status="success" value="Звонили"></tui-badge>
+              <tui-badge *ngIf="!userRequest.called" status="error" value="Ожидает звонка"></tui-badge>
+            </div>
+          </div>
+        </td>
+        <td>
+          <tui-text-area [(ngModel)]="userRequest.adminMark" (focusedChange)="focusedChange(userRequest, $event)"
+                         style="min-width: 280px;">
+            Пометка
+          </tui-text-area>
+        </td>
+        <td>
+          <button tuiButton size="s" appearance="accent" (click)="deleteUserRequest(userRequest)">
+            <i class="bi bi-trash3" style="font-size: 20px;"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</tui-loader>

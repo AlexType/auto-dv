@@ -6,12 +6,14 @@ import { AdminPagesRoutingModule } from './admin-pages-routing.module';
 import { AdminAuthPageComponent } from './components/admin-auth-page/admin-auth-page.component';
 import { AdminDomainModule } from '../domain/admin-domain.module';
 import { AdminDashboardPageComponent } from './components/admin-dashboard-page/admin-dashboard-page.component';
+import { AdminCarCreatorPageComponent } from './components/admin-car-creator-page/admin-car-creator-page.component';
 
 
 @NgModule({
   declarations: [
     AdminAuthPageComponent,
-    AdminDashboardPageComponent
+    AdminDashboardPageComponent,
+    AdminCarCreatorPageComponent,
   ],
   imports: [
     CommonModule,

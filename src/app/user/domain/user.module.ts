@@ -18,10 +18,11 @@ import { InviteBlockViewComponent } from './components/invite-block-view/invite-
 import { UserContactsContainerComponent } from './components/user-contacts-container/user-contacts-container.component';
 import { UserContactViewComponent } from './components/user-contact-view/user-contact-view.component';
 import { UserCalculationContainerComponent } from './components/user-calculation-container/user-calculation-container.component';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserAutoListContainerComponent } from './components/user-auto-list-container/user-auto-list-container.component';
 import { UserAutoListViewComponent } from './components/user-auto-list-view/user-auto-list-view.component';
+import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,9 @@ import { UserAutoListViewComponent } from './components/user-auto-list-view/user
     AutoModule,
     SwiperModule,
     MatRadioModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaskDirective,
+    NgxMaskPipe
   ],
   exports: [
     UserFaqContainerComponent,

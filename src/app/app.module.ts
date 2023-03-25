@@ -1,3 +1,4 @@
+import { provideNgxMask } from 'ngx-mask';
 import { NgDompurifySanitizer } from "@tinkoff/ng-dompurify";
 import { TuiRootModule, TuiDialogModule, TuiAlertModule, TUI_SANITIZER } from "@taiga-ui/core";
 import { MatDialogModule } from '@angular/material/dialog';
@@ -48,7 +49,8 @@ import { JwtModule } from "@auth0/angular-jwt";
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
       multi: true,
-    }
+    },
+    provideNgxMask()
   ],
   bootstrap: [AppComponent]
 })

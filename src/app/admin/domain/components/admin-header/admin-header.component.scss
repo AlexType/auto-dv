@@ -12,3 +12,21 @@
     }
   }
 }
+
+.menu {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+
+  li {
+    margin-right: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      color: #fff;
+    }
+  }
+}

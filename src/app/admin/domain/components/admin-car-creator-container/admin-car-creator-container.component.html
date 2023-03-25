@@ -1,0 +1,58 @@
+<form [formGroup]="fg">
+  <div class="row gy-4">
+    <div class="col-12">
+      <tui-input formControlName="img">
+        Ссылка на изображение
+        <input tuiTextfield type="text" autocomplete="off" />
+      </tui-input>
+    </div>
+    <div class="col-12">
+      <tui-input formControlName="mark">
+        Марка
+        <input tuiTextfield type="text" autocomplete="off" />
+      </tui-input>
+    </div>
+    <div class="col-12">
+      <tui-input formControlName="model">
+        Модель
+        <input tuiTextfield type="text" autocomplete="off" />
+      </tui-input>
+    </div>
+    <div class="col-12">
+      <tui-input formControlName="cc">
+        СС
+        <input tuiTextfield type="number" autocomplete="off" />
+      </tui-input>
+    </div>
+    <div class="col-12">
+
+      <tui-select formControlName="engine">
+        Тип двигателя
+        <input tuiTextfield />
+        <tui-data-list-wrapper *tuiDataList [items]="engineData"></tui-data-list-wrapper>
+      </tui-select>
+
+      <!-- <tui-input formControlName="engine">
+        Тип двигателя
+        <input tuiTextfield type="text" autocomplete="off" />
+      </tui-input> -->
+    </div>
+    <div class="col-12">
+      <tui-input formControlName="year">
+        Год
+        <input tuiTextfield type="number" autocomplete="off" />
+      </tui-input>
+    </div>
+    <div class="col-12">
+      <tui-input formControlName="price">
+        Цена
+        <input tuiTextfield type="number" autocomplete="off" />
+      </tui-input>
+    </div>
+    <div class="col-12">
+      <button tuiButton type="submit" appearance="primary" size="m">
+        Создать
+      </button>
+    </div>
+  </div>
+</form>
