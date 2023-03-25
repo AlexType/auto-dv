@@ -1,0 +1,14 @@
+@import "tools";
+
+.admin-header {
+  border-bottom: 1px solid $root-gray;
+
+  &__user {
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-left: 10px;
+    }
+  }
+}

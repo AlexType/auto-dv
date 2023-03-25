@@ -1,0 +1,21 @@
+<form [formGroup]="fg" (ngSubmit)="submitForm.emit(fg.value)">
+  <div class="row gy-4">
+    <div class="col-12">
+      <tui-input formControlName="username">
+        E-mail
+        <input tuiTextfield type="text" autocomplete="off" />
+      </tui-input>
+    </div>
+    <div class="col-12">
+      <tui-input-password formControlName="password">
+        Пароль
+        <input tuiTextfield placeholder="Make it secure!" autocomplete="new-password" />
+      </tui-input-password>
+    </div>
+    <div class="col-12">
+      <button tuiButton type="submit" appearance="primary" size="m">
+        Авторизоваться
+      </button>
+    </div>
+  </div>
+</form>

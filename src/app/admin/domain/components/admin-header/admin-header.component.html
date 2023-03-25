@@ -1,0 +1,15 @@
+<div class="admin-header py-3">
+  <div class="row justify-content-between align-items-center">
+    <div class="col-auto">
+      <div class="admin-header__user">
+        <tui-avatar [text]="user.username" size="m"></tui-avatar>
+        <span>{{user.username}}</span>
+      </div>
+    </div>
+    <div class="col-auto">
+      <button tuiButton size="m" appearance="accent" (click)="logout()">
+        Выйти
+      </button>
+    </div>
+  </div>
+</div>

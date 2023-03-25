@@ -5,11 +5,11 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
-      { path: '', loadChildren: () => import('./user/pages/user-pages-routing.module').then(m => m.UserPagesRoutingModule) },
-      { path: '**', redirectTo: '/' }
+      { path: '', loadChildren: () => import('./user/pages/user-pages.module').then(m => m.UserPagesModule) },
     ]
   },
-  { path: '', loadChildren: () => import('./user/pages/user-pages.module').then(m => m.UserPagesModule) },
+  { path: 'admin', loadChildren: () => import('./admin/pages/admin-pages.module').then(m => m.AdminPagesModule) },
+  { path: '**', redirectTo: '/' }
 ];
 
 @NgModule({
