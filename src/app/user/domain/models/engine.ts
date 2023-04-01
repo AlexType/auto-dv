@@ -11,3 +11,10 @@ export const engineData: { [e in Engine]: string } = {
   [Engine.Hybrid]: 'Гибрид',
   [Engine.Electro]: 'Электро',
 }
+
+export const engineArrayData: { key: Engine; name: string }[] = [
+  { key: Engine.Gas, name: 'Бензин' },
+  { key: Engine.Diesel, name: 'Дизель' },
+  { key: Engine.Hybrid, name: 'Гибрид' },
+  { key: Engine.Electro, name: 'Электро' }
+];

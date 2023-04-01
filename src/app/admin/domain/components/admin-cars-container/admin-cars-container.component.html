@@ -1,0 +1,42 @@
+<tui-loader [showLoader]="loading" [overlay]="true">
+  <table *ngIf="cars$ | async as cars" class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Марка/Модель</th>
+        <th scope="col">Объём</th>
+        <th scope="col">Топливо</th>
+        <th scope="col">Год</th>
+        <th scope="col">Наличие</th>
+        <th scope="col">Цена</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let car of cars; let i = index" style="vertical-align: middle;">
+        <td>{{i + 1}}</td>
+        <td>
+          <img [src]="car.img" alt="" width="50px" class="me-2">
+          {{car.mark}} {{car.model}}
+        </td>
+        <td>{{car.cc}}</td>
+        <td>{{engineData[car.engine]}}</td>
+        <td>{{car.year}}</td>
+        <td>
+          <tui-loader [showLoader]="updating?.[car._id] || false" [overlay]="true">
+            <tui-toggle [(ngModel)]="car.availability" (ngModelChange)="updateRequest$.next(car)"
+                        [showIcons]="true" size="l" class="me-2"></tui-toggle>
+            <tui-badge *ngIf="car.availability" value="В наличии" status="success"></tui-badge>
+            <tui-badge *ngIf="!car.availability" value="Нет в наличии" status="error"></tui-badge>
+          </tui-loader>
+        </td>
+        <td>{{car.price | currency: 'Р'}}</td>
+        <td>
+          <button tuiButton size="s" appearance="accent" [disabled]="updating?.[car._id] || false" (click)="deleteUserRequest(car)">
+            <i class="bi bi-trash3" style="font-size: 20px;"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</tui-loader>

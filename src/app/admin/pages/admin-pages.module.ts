@@ -7,6 +7,7 @@ import { AdminAuthPageComponent } from './components/admin-auth-page/admin-auth-
 import { AdminDomainModule } from '../domain/admin-domain.module';
 import { AdminDashboardPageComponent } from './components/admin-dashboard-page/admin-dashboard-page.component';
 import { AdminCarCreatorPageComponent } from './components/admin-car-creator-page/admin-car-creator-page.component';
+import { AdminCarsPageComponent } from './components/admin-cars-page/admin-cars-page.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { AdminCarCreatorPageComponent } from './components/admin-car-creator-pag
     AdminAuthPageComponent,
     AdminDashboardPageComponent,
     AdminCarCreatorPageComponent,
+    AdminCarsPageComponent,
   ],
   imports: [
     CommonModule,

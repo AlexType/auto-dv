@@ -1,0 +1,8 @@
+<dv-admin-add-car-form [loader]="loader"
+                       [years]="years"
+                       [marks]="marks$ | async"
+                       [models]=" models$ | async"
+                       (createCar)="createCar($event)"
+                       (changedMark)="changedMark($event)"
+                       (changedModel)="changedModel($event)">
+</dv-admin-add-car-form>

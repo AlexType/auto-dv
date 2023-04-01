@@ -1,6 +1,6 @@
 import { provideNgxMask } from 'ngx-mask';
 import { NgDompurifySanitizer } from "@tinkoff/ng-dompurify";
-import { TuiRootModule, TuiDialogModule, TuiAlertModule, TUI_SANITIZER } from "@taiga-ui/core";
+import { TuiRootModule, TuiDialogModule, TuiAlertModule, TUI_SANITIZER, TuiThemeNightModule } from "@taiga-ui/core";
 import { MatDialogModule } from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
 import { NgModule } from '@angular/core';
@@ -32,6 +32,7 @@ import { JwtModule } from "@auth0/angular-jwt";
     MatSnackBarModule,
     TuiRootModule,
     TuiDialogModule,
+    TuiThemeNightModule,
     TuiAlertModule,
     JwtModule.forRoot({
       config: {

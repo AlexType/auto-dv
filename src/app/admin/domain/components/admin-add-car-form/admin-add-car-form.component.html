@@ -1,0 +1,95 @@
+<tui-loader [showLoader]="loader" [overlay]="true">
+  <tui-island>
+    <h3 class="tui-island__title">Добавить новую машину</h3>
+    <form [formGroup]="fg" (ngSubmit)="submit()">
+      <div class="row row-cols-3 g-3">
+        <div class="col">
+          <tui-select tuiTextfieldSize="m" formControlName="mark" [valueContent]="contentTemplate">
+            Марка
+            <input tuiTextfield />
+            <tui-data-list-wrapper *tuiDataList
+                                   [items]="marks"
+                                   [itemContent]="contentTemplate"></tui-data-list-wrapper>
+          </tui-select>
+        </div>
+        <div class="col">
+          <tui-select tuiTextfieldSize="m"
+                      [readOnly]="!models"
+                      formControlName="model"
+
+                      [valueContent]="contentTemplate">
+            Модель
+            <input tuiTextfield />
+            <tui-data-list-wrapper *tuiDataList
+                                   [items]="models"
+                                   [itemContent]="contentTemplate"></tui-data-list-wrapper>
+          </tui-select>
+        </div>
+        <div class="col">
+          <tui-select tuiTextfieldSize="m" [readOnly]="!years.length" formControlName="year">
+            Год
+            <input tuiTextfield />
+            <tui-data-list-wrapper *tuiDataList [items]="years"></tui-data-list-wrapper>
+          </tui-select>
+        </div>
+        <div class="col">
+          <tui-select tuiTextfieldSize="m" formControlName="engineType" [valueContent]="contentTemplate">
+            Тип двигателя
+            <input tuiTextfield />
+            <tui-data-list-wrapper *tuiDataList
+                                   [items]="engineOptions"
+                                   [itemContent]="contentTemplate"></tui-data-list-wrapper>
+          </tui-select>
+        </div>
+        <div class="col">
+          <tui-input-number tuiTextfieldSize="m" formControlName="cc" postfix=" cc">
+            Объём двигателя
+          </tui-input-number>
+        </div>
+        <div class="col">
+          <tui-input-number tuiTextfieldSize="m" formControlName="price" postfix=" ₽">
+            Стоимость
+          </tui-input-number>
+        </div>
+      </div>
+      <div class="row mt-3 align-items-center">
+        <div class="col-auto">
+          <tui-checkbox-labeled formControlName="availability">
+            В наличии
+          </tui-checkbox-labeled>
+        </div>
+        <div class="col">
+          <tui-input formControlName="img" tuiTextfieldSize="m">
+            Ссылка на изображение
+            <input tuiTextfield type="email" />
+          </tui-input>
+        </div>
+      </div>
+      <div class="row justify-content-between mt-4">
+        <div class="col-auto">
+          <button tuiButton
+                  size="m"
+                  type="submit"
+                  [disabled]="!fg.valid"
+                  iconRight="tuiIconPlus">
+            Добавить
+          </button>
+        </div>
+        <div class="col-auto">
+          <button tuiButton
+                  size="m"
+                  type="button"
+                  appearance="accent"
+                  iconRight="tuiIconTrash"
+                  (click)="resetForm()">
+            Очистить
+          </button>
+        </div>
+      </div>
+    </form>
+  </tui-island>
+</tui-loader>
+
+<ng-template #contentTemplate let-item>
+  {{item.name}}
+</ng-template>

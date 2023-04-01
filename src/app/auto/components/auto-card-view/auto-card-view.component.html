@@ -50,7 +50,9 @@
     <div>
       <div class="app-auto-card-view__divider my-3"></div>
       <div class="app-auto-card-view__footer">
-        <div class="app-auto-card-view__price mb-3">
+        <tui-badge *ngIf="car.availability" value="В наличии" status="success"></tui-badge>
+        <tui-badge *ngIf="!car.availability" value="Нет в наличии" status="error"></tui-badge>
+        <div class="app-auto-card-view__price mt-3 mb-3">
           <span>от</span> <span>{{car.price | currency: 'Р'}}</span>
         </div>
         <button mat-flat-button color="warn" (click)="sendRequest()">
