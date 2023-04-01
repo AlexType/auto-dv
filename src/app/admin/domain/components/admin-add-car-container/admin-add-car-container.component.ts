@@ -32,6 +32,7 @@ export class AdminAddCarContainerComponent {
   }
 
   protected changedModel(model: CarModelDto): void {
+    this.years = [];
     const yearFrom = model.yearFrom;
     const yearTo = model.yearTo || new Date().getFullYear();
     for (let year = yearFrom; year <= yearTo; year++)  this.years.push(year);
